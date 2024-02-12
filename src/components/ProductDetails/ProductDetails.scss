@@ -1,3 +1,21 @@
 a {
     display: inline !important;
+    color: black !important;
+}
+.borders {
+    border-bottom: 1px solid rgb(211, 209, 209) !important;
+}
+.hover-btn {
+    transition: .5s all;
+}
+.hover-btn:hover {
+    color: black !important;
+    background-color: rgb(204, 202, 202) !important;
+}
+
+.section-border {
+    border-bottom: 1px solid rgb(218, 215, 215) !important;
+}
+.pointer {
+    cursor: pointer;
 }

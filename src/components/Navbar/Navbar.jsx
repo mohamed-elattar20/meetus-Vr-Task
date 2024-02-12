@@ -32,7 +32,7 @@ export default class Navbar extends Component {
               className=" justify-content-end "
               closeButton
             ></Offcanvas.Header>
-            <Offcanvas.Title className="text-center text-info">
+            <Offcanvas.Title className="text-center text-info fw-bold">
               My Cart
             </Offcanvas.Title>
             <Offcanvas.Body>
@@ -94,11 +94,11 @@ export default class Navbar extends Component {
                 />
               </a>
 
-              <ul className="navbar-nav ms-auto  mb-2 mb-lg-0">
+              <ul className="navbar-nav ms-auto align-items-sm-baseline align-items-lg-center  mb-2 mb-lg-0">
                 <li className="nav-item">
                   <button
                     onClick={this.handleShow}
-                    className="nav-link active d-flex   text-center"
+                    className="nav-link active d-flex   "
                     aria-current="page"
                     href="#"
                   >
