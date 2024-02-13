@@ -107,13 +107,13 @@ export default class Navbar extends Component {
           {/*  */}
           {/*  */}
           <div className="container justify-content-between">
-            <a className="navbar-brand  d-block d-lg-none" href="#">
+            <Link className="navbar-brand  d-block d-lg-none" to={`/`}>
               <img
                 className="img-fluid my-2 my-lg-0 align-self-center"
                 src={adidas}
                 alt=""
               />
-            </a>
+            </Link>
 
             <button
               className="navbar-toggler"
