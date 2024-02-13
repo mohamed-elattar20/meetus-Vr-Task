@@ -24,6 +24,10 @@ export default class Navbar extends Component {
   handleClose = () => {
     this.setState({ show: false });
   };
+
+  submitHandler(e) {
+    e.preventDefault();
+  }
   render() {
     // console.log(this.props.cart);
     return (
@@ -128,7 +132,7 @@ export default class Navbar extends Component {
               id="navbarSupportedContent"
             >
               {/*  */}
-              <form className="" role="search">
+              <form onSubmit={this.submitHandler} className="" role="search">
                 <div className="position-relative my-3 my-lg-0">
                   <input
                     className=" rounded-5 p-2 px-5 search-input"
