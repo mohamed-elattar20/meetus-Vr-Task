@@ -113,11 +113,7 @@ class ProductDetails extends Component {
                     src={this.state.imgSrc || ""}
                     alt=""
                   />
-                  {/* <img
-                    className="img-fluid object-fit-cover rounded-3"
-                    src="../../../public/images/gn1856-4.jpg"
-                    alt=""
-                  /> */}
+
                   <button
                     style={{ top: "5%", left: "5%" }}
                     className="btn position-absolute bg-white shadow-sm border border-1 border-secondary border-opacity-25 p-1 rounded-3"
@@ -140,34 +136,6 @@ class ProductDetails extends Component {
                         />
                       </div>
                     ))}
-                    {/* <div className={`col rounded-3 `}>
-                      <img
-                        className={`img-fluid rounded-3 pointer`}
-                        src="../../../public/images/gn1856-4.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div className="col rounded-3">
-                      <img
-                        className="img-fluid rounded-3 pointer"
-                        src="../../../public/images/gn1856-2.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div className="col rounded-3">
-                      <img
-                        className="img-fluid rounded-3 pointer"
-                        src="../../../public/images/gn1856-8.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div className="col rounded-3">
-                      <img
-                        className="img-fluid rounded-3 pointer"
-                        src="../../../public/images/gn1856-9.jpg"
-                        alt=""
-                      />
-                    </div> */}
                   </div>
                 </div>
               </div>
@@ -301,23 +269,11 @@ class ProductDetails extends Component {
                   <ProductCard product={product} />
                 </div>
               ))}
-            {/* <div className="col-sm-12 col-md-6 col-lg-3">
-              <ProductCard />
-            </div>
-            <div className="col-sm-12 col-md-6 col-lg-3">
-              <ProductCard />
-            </div>
-            <div className="col-sm-12 col-md-6 col-lg-3">
-              <ProductCard />
-            </div>
-            <div className="col-sm-12 col-md-6 col-lg-3">
-              <ProductCard />
-            </div> */}
           </div>
         </div>
       </>
     );
   }
 }
-// export default withRouter(ProductDetails);
+
 export default ProductDetails;

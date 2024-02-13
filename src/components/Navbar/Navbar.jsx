@@ -57,10 +57,11 @@ export default class Navbar extends Component {
                               {product.productPrice} <sub>LE</sub>
                             </p>
                             <button
+                              style={{ fontSize: "12px" }}
                               onClick={() =>
                                 this.props.deleteFromCart(product.id)
                               }
-                              className="btn btn-sm btn-primary"
+                              className="btn btn-sm btn-primary rounded-pill px-3"
                             >
                               Remove
                             </button>
@@ -68,6 +69,20 @@ export default class Navbar extends Component {
                         </div>
                       </div>
                     ))}
+                    <div className="d-flex gap-1 my-4 justify-content-center">
+                      <button
+                        style={{ fontSize: "12px" }}
+                        className="rounded-pill btn btn-primary px-3 "
+                      >
+                        Review Cart
+                      </button>
+                      <button
+                        style={{ fontSize: "12px" }}
+                        className="rounded-pill btn btn-info px-3"
+                      >
+                        Complete Checkout
+                      </button>
+                    </div>
                   </div>
                 ) : (
                   <div>
