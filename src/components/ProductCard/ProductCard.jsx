@@ -47,7 +47,10 @@ export default class ProductCard extends Component {
             <p className="card-text">{productName || ""}</p>
             <div className="d-flex justify-content-between  align-items-center">
               <div>
-                <p style={{ fontSize: "1.25rem" }} className="text-info my-0">
+                <p
+                  style={{ fontSize: "1.25rem" }}
+                  className="text-info my-0 fw-bold"
+                >
                   {productPrice || ""} <sub>LE</sub>
                 </p>
                 <div className="d-flex mt-2">
