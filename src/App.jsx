@@ -10,6 +10,8 @@ import Home from "./pages/Home/Home";
 import toast, { Toaster } from "react-hot-toast";
 
 //
+import color1 from "../public/images/Group 354.png";
+import color2 from "../public/images/Group 356.png";
 
 let products = [
   {
@@ -17,18 +19,16 @@ let products = [
     productName: "Adidas black t-shirt ",
     productPrice: 9999,
     sizes: ["small", "medium", "Large", "X Large", "XX Large"],
-    colors: [
-      "../../../public/images/Group 354.png",
-      "../../../public/images/Group 356.png",
-    ],
+    colors: [color1, color2],
     rates: 22,
     sale: 30,
-    mainImg: "../../../public/images/gn1856-4.jpg",
+    mainImg:
+      "https://api.yeshtery.com/v1/yeshtery/files/31/ha0931-3-apparel-on-model-standard-view-white-13490c3a2f964b57a4ea9103f0a4a0ff.jpg?height=568",
     imgs: [
-      "../../../public/images/gn1856-4.jpg",
-      "../../../public/images/gn1856-2.jpg",
-      "../../../public/images/gn1856-8.jpg",
-      "../../../public/images/gn1856-9.jpg",
+      "https://api.yeshtery.com/v1/yeshtery/files/31/ha0931-3-apparel-on-model-standard-view-white-13490c3a2f964b57a4ea9103f0a4a0ff.jpg?height=568",
+      "https://api.yeshtery.com/v1/yeshtery/files/31/ha0931-2-apparel-photography-front-center-view-white-33a1afcceacd448d9d004045e3c323a1.jpg?height=568",
+      "https://api.yeshtery.com/v1/yeshtery/files/31/ha0931-9-apparel-zip-turntable-3d-1-white-10ac3846fcea4cfe856327efdea291ab.jpg?height=568",
+      "https://api.yeshtery.com/v1/yeshtery/files/31/ha0931-5-apparel-on-model-back-view-white-be339bc468a944b7b7085d95fdb9451a.jpg?height=568",
     ],
   },
   {
@@ -36,10 +36,7 @@ let products = [
     productName: "Floral Tee - adidas",
     productPrice: 700,
     sizes: ["small", "medium", "Large", "X Large", "XX Large"],
-    colors: [
-      "../../../public/images/Group 354.png",
-      "../../../public/images/Group 356.png",
-    ],
+    colors: [color1, color2],
     rates: 50,
     sale: 20,
     mainImg:
@@ -56,10 +53,7 @@ let products = [
     productName: "Adidas SPRT Summer Tee",
     productPrice: 1000,
     sizes: ["small", "medium", "Large", "X Large", "XX Large"],
-    colors: [
-      "../../../public/images/Group 354.png",
-      "../../../public/images/Group 356.png",
-    ],
+    colors: [color1, color2],
     rates: 22,
     sale: 30,
     mainImg:
@@ -76,10 +70,7 @@ let products = [
     productName: "Studio Graphic Tee-Adidas",
     productPrice: 1079,
     sizes: ["small", "medium", "Large", "X Large", "XX Large"],
-    colors: [
-      "../../../public/images/Group 354.png",
-      "../../../public/images/Group 356.png",
-    ],
+    colors: [color1, color2],
     rates: 36,
     sale: 15,
     mainImg:
@@ -96,10 +87,7 @@ let products = [
     productName: "ZX FTW PACK TEE",
     productPrice: 869,
     sizes: ["small", "medium", "Large", "X Large", "XX Large"],
-    colors: [
-      "../../../public/images/Group 354.png",
-      "../../../public/images/Group 356.png",
-    ],
+    colors: [color1, color2],
     rates: 22,
     sale: 30,
     mainImg:

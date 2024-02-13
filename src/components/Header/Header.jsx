@@ -1,6 +1,10 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
 import yesh from "../../../public/images/Group 769.svg";
+import lines from "../../../public/images/Group 770.svg";
+import telephone from "../../../public/images/Group 756.svg";
+import cart from "../../../public/images/Group 758.svg";
+import location from "../../../public/images/Group 753.svg";
 export default class Header extends Component {
   render() {
     return (
@@ -11,12 +15,8 @@ export default class Header extends Component {
               <div className="col-sm-12 col-lg-2 d-flex align-items-center justify-content-sm-center">
                 <Link to={`/`}>
                   <figure className="m-0">
-                    <img
-                      className="me-4"
-                      src="../../../public/images/Group 770.svg"
-                      alt=""
-                    />
-                    {/* <img src="../../../public/images/Group 769.svg" alt="" /> */}
+                    <img className="me-4" src={lines} alt="" />
+
                     <img src={yesh} alt="" />
                   </figure>
                 </Link>
@@ -32,19 +32,19 @@ export default class Header extends Component {
               <div className=" col-sm-12 col-md-12 col-lg-5 justify-content-sm-center d-flex align-items-center flex-wrap">
                 <button className="btn d-flex">
                   <figure className="me-2 my-0">
-                    <img src="../../../public/images/Group 756.svg" alt="" />
+                    <img src={telephone} alt="" />
                   </figure>
                   Contanct Us
                 </button>
                 <button className="btn d-flex">
                   <figure className="me-2 my-0">
-                    <img src="../../../public/images/Group 758.svg" alt="" />
+                    <img src={cart} alt="" />
                   </figure>
                   Track Order
                 </button>
                 <button className="btn d-flex">
                   <figure className="me-2 my-0">
-                    <img src="../../../public/images/Group 753.svg" alt="" />
+                    <img src={location} alt="" />
                   </figure>
                   Find A Store
                 </button>

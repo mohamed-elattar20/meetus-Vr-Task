@@ -7,6 +7,9 @@ import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 //
 
+import icon360 from "../../../public/images/Group 577.svg";
+import adidas from "../../../public/images/Group 745.svg";
+
 export default class ProductCard extends Component {
   constructor(props) {
     super(props);
@@ -31,23 +34,12 @@ export default class ProductCard extends Component {
                 alt="Image description"
                 className=" img-fluid object-fit-cover d-block w-100 hover"
                 loading="lazy"
-                // Optional: Placeholder while loading
-                // placeholder="https://tse2.mm.bing.net/th?id=OIP.xvDrMozhxckZCAVNSIVNrQHaHa&pid=Api&P=0&h=220"
               />
-
-              {/*  */}
-              {/*  */}
-              {/* <img
-                src={mainImg || "../../../public/images/Group 583.png"}
-                className=" img-fluid object-fit-cover d-block w-100 hover"
-                alt="..."
-              /> */}
-
               <button
                 style={{ top: "5%", left: "5%" }}
                 className="btn position-absolute bg-white shadow-sm border border-1 border-secondary border-opacity-25 p-1 rounded-3"
               >
-                <img src="../../../public/images/Group 577.svg" alt="" />
+                <img src={icon360} alt="" />
               </button>
             </Link>
           </div>
@@ -68,7 +60,7 @@ export default class ProductCard extends Component {
               <div>
                 <img
                   className="img-fluid object-fit-contain "
-                  src="../../../public/images/Group 745.svg"
+                  src={adidas}
                   alt=""
                 />
               </div>

@@ -1,7 +1,14 @@
 import { Component } from "react";
-import Button from "react-bootstrap/Button";
+
 import Offcanvas from "react-bootstrap/Offcanvas";
 import "./Navbar.scss";
+
+//
+import adidas from "../../../public/images/Group 745.svg";
+import searchIcon from "../../../public/images/Path 774.svg";
+import cart from "../../../public/images/Path 772.svg";
+import wishList from "../../../public/images/Path 771.svg";
+import login from "../../../public/images/Path 773.svg";
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -98,7 +105,7 @@ export default class Navbar extends Component {
             <a className="navbar-brand  d-block d-lg-none" href="#">
               <img
                 className="img-fluid my-2 my-lg-0 align-self-center"
-                src="../../../public/images/Group 745.svg"
+                src={adidas}
                 alt=""
               />
             </a>
@@ -132,18 +139,14 @@ export default class Navbar extends Component {
                     style={{ top: "20%", left: "3%" }}
                     className="position-absolute "
                   >
-                    <img src="../public/images/Path 774.svg" alt="" />
+                    <img src={searchIcon} alt="" />
                   </figure>
                 </div>
               </form>
               {/*  */}
 
               <a className="navbar-brand m-auto d-none d-lg-block " href="#">
-                <img
-                  className="img-fluid my-2 my-lg-0 "
-                  src="../../../public/images/Group 745.svg"
-                  alt=""
-                />
+                <img className="img-fluid my-2 my-lg-0 " src={adidas} alt="" />
               </a>
 
               <ul className="navbar-nav ms-auto align-items-sm-baseline align-items-lg-center  mb-2 mb-lg-0">
@@ -155,11 +158,7 @@ export default class Navbar extends Component {
                     href="#"
                   >
                     <div className="position-relative d-flex me-2">
-                      <img
-                        className=""
-                        src="../../../public/images/Path 772.svg"
-                        alt=""
-                      />
+                      <img className="" src={cart} alt="" />
                       <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
                         {this.props.cart?.length}
                         <span className="visually-hidden">unread messages</span>
@@ -170,21 +169,13 @@ export default class Navbar extends Component {
                 </li>
                 <li className="nav-item mx-0 mx-lg-4">
                   <a className="nav-link active  " aria-current="page" href="#">
-                    <img
-                      className="me-2"
-                      src="../../../public/images/Path 771.svg"
-                      alt=""
-                    />
+                    <img className="me-2" src={wishList} alt="" />
                     Wishlist
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link active  " aria-current="page" href="#">
-                    <img
-                      className="me-2"
-                      src="../../../public/images/Path 773.svg"
-                      alt=""
-                    />
+                    <img className="me-2" src={login} alt="" />
                     Login
                   </a>
                 </li>

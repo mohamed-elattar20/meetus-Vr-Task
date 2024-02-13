@@ -2,6 +2,17 @@ import { Component } from "react";
 import "./Footer.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
+
+//
+import logo from "../../../public/images/Group 1436.svg";
+import logo2 from "../../../public/images/Group 1439.svg";
+import facebook from "../../../public/images/Group 1432.svg";
+import twitter from "../../../public/images/Group 1433.svg";
+import instagram from "../../../public/images/Group 1434.svg";
+import linkedin from "../../../public/images/Group 1435.svg";
+import cashOnDelivery from "../../../public/images/Rectangle 586.png";
+import visa from "../../../public/images/Group 1437.png";
+import master from "../../../public/images/Group 1438.png";
 export default class Footer extends Component {
   render() {
     return (
@@ -13,7 +24,7 @@ export default class Footer extends Component {
               className="row pb-3"
             >
               <div className="col-sm-12 col-md-12 col-lg-6 border-col px-2">
-                <img src="../../../public/images/Group 1436.svg" alt="" />
+                <img src={logo} alt="" />
                 <p className="mt-3">
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
                   diam nonummy nibh euismod tincidunt ut laoreet dolore magna
@@ -106,7 +117,7 @@ export default class Footer extends Component {
                     >
                       <img
                         className="object-fit-cover img-fluid mt-4"
-                        src="../../../public/images/Group 1432.svg"
+                        src={facebook}
                         alt=""
                       />
                       <span className="mt-4 ms-3">/YESHTERY</span>
@@ -117,7 +128,7 @@ export default class Footer extends Component {
                     >
                       <img
                         className="object-fit-cover img-fluid mt-4"
-                        src="../../../public/images/Group 1433.svg"
+                        src={twitter}
                         alt=""
                       />
                       <span className="mt-4 ms-3">/YESHTERY</span>
@@ -128,7 +139,7 @@ export default class Footer extends Component {
                     >
                       <img
                         className="object-fit-cover img-fluid mt-4"
-                        src="../../../public/images/Group 1434.svg"
+                        src={instagram}
                         alt=""
                       />
                       <span className="mt-4 ms-3">/YESHTERY</span>
@@ -139,7 +150,7 @@ export default class Footer extends Component {
                     >
                       <img
                         className="object-fit-cover img-fluid mt-4"
-                        src="../../../public/images/Group 1435.svg"
+                        src={linkedin}
                         alt=""
                       />
                       <span className="mt-4 ms-3">/YESHTERY</span>
@@ -156,18 +167,18 @@ export default class Footer extends Component {
               </div>
               <div className="col-sm-12 col-md-12 col-lg-4 d-flex gap-1 align-items-center justify-content-center my-3 my-lg-0">
                 <figure>
-                  <img src="../../../public/images/Rectangle 586.png" alt="" />
+                  <img src={cashOnDelivery} alt="" />
                 </figure>
                 <figure>
-                  <img src="../../../public/images/Group 1437.png" alt="" />
+                  <img src={visa} alt="" />
                 </figure>
                 <figure>
-                  <img src="../../../public/images/Group 1438.png" alt="" />
+                  <img src={master} alt="" />
                 </figure>
               </div>
               <div className="col-sm-12 col-md-12 col-lg-4 d-flex align-items-center justify-content-center">
                 <p className="text-light my-0 me-3">Powered By</p>
-                <img src="../../../public/images/Group 1439.svg" alt="" />
+                <img src={logo2} alt="" />
               </div>
             </div>
           </div>

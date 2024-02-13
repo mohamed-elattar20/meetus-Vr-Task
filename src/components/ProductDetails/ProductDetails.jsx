@@ -4,6 +4,9 @@ import "./ProductDetails.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import ProductCard from "../ProductCard/ProductCard";
+//
+import adidas from "../../../public/images/Group 346.svg";
+import icon360 from "../../../public/images/Group 338.svg";
 
 //
 let sizes = ["small", "medium", "Large", "X Large", "XX Large"];
@@ -118,11 +121,7 @@ class ProductDetails extends Component {
                     style={{ top: "5%", left: "5%" }}
                     className="btn position-absolute bg-white shadow-sm border border-1 border-secondary border-opacity-25 p-1 rounded-3"
                   >
-                    <img
-                      className=""
-                      src="../../../public/images/Group 338.svg"
-                      alt=""
-                    />
+                    <img className="" src={icon360} alt="" />
                   </button>
                 </div>
                 <div className="col-12 mt-2">
@@ -142,7 +141,7 @@ class ProductDetails extends Component {
             </div>
             <div className="col-sm-12 col-md-7 col-lg-6">
               <div>
-                <img src="../../../public/images/Group 346.svg" alt="" />
+                <img src={adidas} alt="" />
               </div>
               <p style={{ maxWidth: "65%" }} className="fw-bold mt-2">
                 {this.state.product?.productName}
