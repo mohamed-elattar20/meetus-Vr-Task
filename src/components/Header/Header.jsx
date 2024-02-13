@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
-
+import yesh from "../../../public/images/Group 769.svg";
 export default class Header extends Component {
   render() {
     return (
@@ -16,7 +16,8 @@ export default class Header extends Component {
                       src="../../../public/images/Group 770.svg"
                       alt=""
                     />
-                    <img src="../../../public/images/Group 769.svg" alt="" />
+                    {/* <img src="../../../public/images/Group 769.svg" alt="" /> */}
+                    <img src={yesh} alt="" />
                   </figure>
                 </Link>
               </div>
