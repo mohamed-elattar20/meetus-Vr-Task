@@ -1,0 +1,16 @@
+.footer {
+    background-color: #3C3C3B;
+    p {
+        color: white !important;
+    }
+}
+.border-col {
+    border-right: 1px solid grey;
+}
+.anchor {
+    text-decoration: none;
+    transition: .5s all;
+}
+.anchor:hover {
+    color: #F11133 !important;
+}

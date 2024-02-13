@@ -18,9 +18,10 @@ export default class Navbar extends Component {
     this.setState({ show: false });
   };
   render() {
+    // console.log(this.props.cart);
     return (
       <>
-        <nav className="navbar navbar-expand-lg  bg-white">
+        <nav className="navbar navbar-expand-lg  bg-white sticky-top">
           {/*  */}
           {/*  */}
           <Offcanvas
@@ -36,8 +37,44 @@ export default class Navbar extends Component {
               My Cart
             </Offcanvas.Title>
             <Offcanvas.Body>
-              Some text as placeholder. In real life you can have the elements
-              you have chosen. Like, text, images, lists, etc.
+              <div className="container">
+                {this.props.cart?.length > 0 ? (
+                  <div className="row">
+                    {this.props.cart?.map((product) => (
+                      <div key={product.id} className="col-12 d-flex w-100">
+                        <figure className=" w-25 ">
+                          <img
+                            className="object-fit-cover img-fluid"
+                            src={product.mainImg}
+                            alt=""
+                          />
+                        </figure>
+                        <div className="w-75">
+                          <p>{product.productName}</p>
+                          <p className="fs-6">Quantity : {product.quantity}</p>
+                          <div className="d-flex justify-content-between w-100">
+                            <p className="text-info fw-bold">
+                              {product.productPrice} <sub>LE</sub>
+                            </p>
+                            <button
+                              onClick={() =>
+                                this.props.deleteFromCart(product.id)
+                              }
+                              className="btn btn-sm btn-primary"
+                            >
+                              Remove
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div>
+                    <h3 className="fw-bold">Cart is Empty</h3>
+                  </div>
+                )}
+              </div>
             </Offcanvas.Body>
           </Offcanvas>
           {/*  */}
@@ -109,7 +146,7 @@ export default class Navbar extends Component {
                         alt=""
                       />
                       <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
-                        0
+                        {this.props.cart?.length}
                         <span className="visually-hidden">unread messages</span>
                       </span>
                     </div>

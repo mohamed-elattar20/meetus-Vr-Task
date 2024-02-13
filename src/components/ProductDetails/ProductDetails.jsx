@@ -1,19 +1,80 @@
 import { Component } from "react";
 import "./ProductDetails.scss";
+// import ProductCard from "../ProductCard/ProductCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import ProductCard from "../ProductCard/ProductCard";
 
+//
 let sizes = ["small", "medium", "Large", "X Large", "XX Large"];
-export default class ProductDetails extends Component {
+class ProductDetails extends Component {
   constructor(props) {
     super(props);
-    this.state = { imgSrc: "../../../public/images/gn1856-4.jpg" };
+
+    this.state = {
+      imgSrc: "../../../public/images/gn1856-4.jpg",
+      productId: null,
+      product: {},
+      productQuantity: 0,
+    };
   }
   handleChangeImg = (event) => {
-    console.log(event.target.src);
+    // console.log(event.target.src);
     if (!event.target.src) return;
     this.setState({ imgSrc: event.target.src });
   };
+
+  componentDidMount() {
+    console.log(this.props.cart);
+    if (
+      this.props.cart.filter(
+        (product) => product.id == window.location.pathname.split("details/")[1]
+      )[0]
+    ) {
+      this.setState({
+        productQuantity: this.props.cart.filter(
+          (product) =>
+            product.id == window.location.pathname.split("details/")[1]
+        )[0].quantity,
+      });
+    }
+    // console.log(
+    //   this.props.cart.filter(
+    //     (product) =>
+    //       product.id == window.location.pathname.split("details/")[1]
+    //   )[0]
+    // );
+    // console.log(window.location.pathname.split("details/")[1]);
+    // this.setState({ productId: window.location.pathname.split("details/")[1] });
+
+    // console.log(
+    //   this.props.products.filter(
+    //     (product) => product.id == window.location.pathname.split("details/")[1]
+    //   )
+    // );
+    this.setState({
+      product: this.props.products.filter(
+        (product) => product.id == window.location.pathname.split("details/")[1]
+      )[0],
+      imgSrc: this.props.products.filter(
+        (product) => product.id == window.location.pathname.split("details/")[1]
+      )[0].mainImg,
+    });
+  }
+
   render() {
+    let quan = 0;
+    if (
+      this.props.cart?.filter(
+        (product) => product.id == window.location.pathname.split("details/")[1]
+      )[0]
+    ) {
+      quan =
+        this.props.cart.filter(
+          (product) =>
+            product.id == window.location.pathname.split("details/")[1]
+        )[0].quantity || 0;
+    }
     return (
       <>
         <section className="paths borders">
@@ -49,7 +110,7 @@ export default class ProductDetails extends Component {
                 <div className="col-12 position-relative p-0 rounded-3">
                   <img
                     className="img-fluid object-fit-cover rounded-3"
-                    src={this.state.imgSrc}
+                    src={this.state.imgSrc || ""}
                     alt=""
                   />
                   {/* <img
@@ -70,7 +131,16 @@ export default class ProductDetails extends Component {
                 </div>
                 <div className="col-12 mt-2">
                   <div onClick={(e) => this.handleChangeImg(e)} className="row">
-                    <div className={`col rounded-3 `}>
+                    {this.state.product?.imgs?.map((img) => (
+                      <div key={img} className={`col rounded-3 `}>
+                        <img
+                          className={`img-fluid rounded-3 pointer`}
+                          src={img}
+                          alt=""
+                        />
+                      </div>
+                    ))}
+                    {/* <div className={`col rounded-3 `}>
                       <img
                         className={`img-fluid rounded-3 pointer`}
                         src="../../../public/images/gn1856-4.jpg"
@@ -97,7 +167,7 @@ export default class ProductDetails extends Component {
                         src="../../../public/images/gn1856-9.jpg"
                         alt=""
                       />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -107,17 +177,28 @@ export default class ProductDetails extends Component {
                 <img src="../../../public/images/Group 346.svg" alt="" />
               </div>
               <p style={{ maxWidth: "65%" }} className="fw-bold mt-2">
-                Adidas black t-shirt lorem ipsum dolor sit amet, consectetuer
-                adipiscing elit.
+                {this.state.product?.productName}
               </p>
               <p className="text-muted fw-bold">Men</p>
               {/*  */}
               <div className="d-flex">
-                <div className="starts">
-                  <p>stars</p>
+                <div className="stars">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <FontAwesomeIcon
+                      className={`${
+                        star <= 4
+                          ? "star-color"
+                          : "text-secondary  text-opacity-10 "
+                      }`}
+                      key={star}
+                      icon={faStar}
+                    />
+                  ))}
                 </div>
                 <p className="fw-bold mx-4">4.9 of 5</p>
-                <p className="fw-bold text-muted">22 Rates</p>
+                <p className="fw-bold text-muted">
+                  {this.state.product?.rates} Rates
+                </p>
               </div>
               {/*  */}
               <div className="d-flex price justify-content-start align-items-center section-border  pb-3">
@@ -125,7 +206,8 @@ export default class ProductDetails extends Component {
                   style={{ fontSize: "1.8rem" }}
                   className="text-info fw-bold my-0"
                 >
-                  9,999 <sub className="fw-medium">LE</sub>
+                  {this.state.product?.productPrice}{" "}
+                  <sub className="fw-medium">LE</sub>
                 </p>
                 <p className="text-muted fw-bold mx-4 my-0 text-decoration-line-through">
                   12,000
@@ -154,28 +236,43 @@ export default class ProductDetails extends Component {
               {/*  */}
               <div className="section-border pb-3">
                 <p className="fw-bold my-3 fs-5">Color</p>
-                <button className="btn rounded-">
-                  <img src="../../../public//images/Group 354.png" alt="" />
+
+                {this.state.product?.colors?.map((color) => (
+                  <button key={color} className="btn rounded-">
+                    <img src={color} alt="" />
+                  </button>
+                ))}
+                {/* <button className="btn rounded-circle">
+                  <img src="../../../public/images/Group 354.png" alt="" />
                 </button>
                 <button className="btn rounded-circle">
                   <img src="../../../public//images/Group 356.png" alt="" />
-                </button>
+                </button> */}
               </div>
               {/*  */}
 
               <div className="">
                 <p className="fw-bold my-3 fs-5">Quantity</p>
                 <div className=" rounded-pill p-2 w-50 d-flex justify-content-between bg-secondary bg-opacity-25 align-items-center ">
-                  <button className="btn btn-primary rounded-circle fw-bold">
+                  <button
+                    onClick={() =>
+                      this.props.removeFromQuantity(this.state.product?.id)
+                    }
+                    className="btn btn-primary rounded-circle fw-bold"
+                  >
                     -
                   </button>
-                  <span className="text-info fw-bold">0</span>
-                  <button className="btn btn-primary rounded-circle fw-bold">
+                  <span className="text-info fw-bold">{quan}</span>
+                  <button
+                    onClick={() => this.props.addToCart(this.state.product?.id)}
+                    className="btn btn-primary rounded-circle fw-bold"
+                  >
                     +
                   </button>
                 </div>
                 <div className="d-flex mt-3 gap-1 flex-wrap">
                   <button
+                    onClick={() => this.props.addToCart(this.state.product?.id)}
                     style={{ fontSize: "1rem" }}
                     className="rounded-pill bg-info text-light border-0 px-5 py-2 fw-medium w-50"
                   >
@@ -196,29 +293,31 @@ export default class ProductDetails extends Component {
             <p className="text-muted fw-medium">
               You may like these products also
             </p>
-            <div className="col-sm-12 col-md-6 col-lg-3">
-              {/* <div> */}
+            {this.props.products
+              .filter((product) => product.id !== this.state.product?.id)
+              .slice(0, 4)
+              .map((product) => (
+                <div key={product.id} className="col-sm-12 col-md-6 col-lg-3">
+                  <ProductCard product={product} />
+                </div>
+              ))}
+            {/* <div className="col-sm-12 col-md-6 col-lg-3">
               <ProductCard />
-              {/* </div> */}
             </div>
             <div className="col-sm-12 col-md-6 col-lg-3">
-              {/* <div> */}
               <ProductCard />
-              {/* </div> */}
             </div>
             <div className="col-sm-12 col-md-6 col-lg-3">
-              {/* <div> */}
               <ProductCard />
-              {/* </div> */}
             </div>
             <div className="col-sm-12 col-md-6 col-lg-3">
-              {/* <div> */}
               <ProductCard />
-              {/* </div> */}
-            </div>
+            </div> */}
           </div>
         </div>
       </>
     );
   }
 }
+// export default withRouter(ProductDetails);
+export default ProductDetails;

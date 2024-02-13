@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class Header extends Component {
   render() {
@@ -8,14 +9,16 @@ export default class Header extends Component {
           <div className="container py-2">
             <div className="row justify-content-center">
               <div className="col-sm-12 col-lg-2 d-flex align-items-center justify-content-sm-center">
-                <figure className="m-0">
-                  <img
-                    className="me-4"
-                    src="../../../public/images/Group 770.svg"
-                    alt=""
-                  />
-                  <img src="../../../public/images/Group 769.svg" alt="" />
-                </figure>
+                <Link to={`/`}>
+                  <figure className="m-0">
+                    <img
+                      className="me-4"
+                      src="../../../public/images/Group 770.svg"
+                      alt=""
+                    />
+                    <img src="../../../public/images/Group 769.svg" alt="" />
+                  </figure>
+                </Link>
               </div>
               <div className="col-sm-12 col-md-12 col-lg-5 my-3 my-lg-0 justify-content-sm-center d-flex align-items-center">
                 <p className="my-0">
