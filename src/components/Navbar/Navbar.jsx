@@ -9,6 +9,7 @@ import searchIcon from "../../../public/images/Path 774.svg";
 import cart from "../../../public/images/Path 772.svg";
 import wishList from "../../../public/images/Path 771.svg";
 import login from "../../../public/images/Path 773.svg";
+import { Link } from "react-router-dom";
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -149,9 +150,9 @@ export default class Navbar extends Component {
               </form>
               {/*  */}
 
-              <a className="navbar-brand m-auto d-none d-lg-block " href="#">
+              <Link to={`/`} className="navbar-brand m-auto d-none d-lg-block ">
                 <img className="img-fluid my-2 my-lg-0 " src={adidas} alt="" />
-              </a>
+              </Link>
 
               <ul className="navbar-nav ms-auto align-items-sm-baseline align-items-lg-center  mb-2 mb-lg-0">
                 <li className="nav-item">
